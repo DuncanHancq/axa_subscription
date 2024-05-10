@@ -1,0 +1,93 @@
+<h1 class="header1">{{ title }}</h1>
+<form action="/ajouter" method="post" enctype="application/x-www-form-urlencoded">
+
+    <h2 class="header2">Informations générales</h2>
+    <div class="input-wrapper">
+        <label for="numero_opportunite">Numéro d'opportunité :</label>
+        <input type="text" id="numero_opportunite" name="numero_opportunite" required>
+    </div>
+
+    <div class="input-wrapper">
+        <label for="reference_dossier">Référence du dossier :</label>
+        <input type="text" id="reference_dossier" name="reference_dossier" required>
+    </div>
+
+    <div class="input-wrapper">
+        <label for="siren">Numéro SIRET/SIREN :</label>
+        <input type="text" id="siren" name="siren" required>
+    </div>
+
+    <div class="input-wrapper">
+        <label for="affaire">Affaire :</label>
+        <input type="text" id="affaire" name="affaire" required>
+    </div>
+
+    <div class="input-wrapper">
+        <label for="nom_client">Nom du client :</label>
+        <input type="text" id="nom_client" name="nom_client" required>
+    </div>
+
+    <div class="input-wrapper">
+        <label for="intermediaire">Intermédiaire (Nom + Code portefeuille) :</label>
+        <input type="text" id="intermediaire" name="intermediaire" required>
+    </div>
+
+    <div class="input-wrapper">
+        <label for="description">Description succincte :</label>
+        <textarea id="description" name="description"></textarea>
+    </div>
+
+    <div class="input-wrapper">
+        <label for="image_description">Image en lien avec la description :</label>
+        <input type="file" id="image_description" name="image_description" accept="image/*">
+    </div>
+
+    <div class="input-wrapper">
+        <label>Présence d'une coassurance :</label>
+        <div class="radio-wrapper">
+            <input type="radio" id="presence_coassurance_oui" name="presence_coassurance" value="oui">
+            <label for="presence_coassurance_oui" class="radio-label">Oui</label>
+            <input type="radio" id="presence_coassurance_non" name="presence_coassurance" value="non">
+            <label for="presence_coassurance_non" class="radio-label">Non</label>
+        </div>
+    </div>
+
+    <h2 class="header2">Caractéristiques techniques</h2>
+    <div class="input-wrapper">
+        <label for="adresse_operation">Adresse de l'opération :</label>
+        <input type="text" id="adresse_operation" name="adresse_operation" required>
+    </div>
+
+    <div class="input-wrapper">
+        <label for="plan_adresse_operation">Plan de l'adresse de l'opération :</label>
+        <input type="file" id="plan_adresse_operation" name="plan_adresse_operation" accept="image/*" multiple>
+    </div>
+
+    <div class="input-wrapper wysiwyg">
+        <label for="descriptif_detaille">Descriptif détaillé de l'opération :</label>
+        <div class="quill-editor"></div>
+        <textarea id="descriptif_detaille" style="display: none" name="descriptif_detaille"></textarea>
+    </div>
+    
+    <div id="op-cost">
+        <div class="input-wrapper">
+            <label for="montant1">Coût de l'opération - Montant 1 :</label>
+            <input type="text" id="montant1" name="montant1" required>
+        </div>
+
+        <div class="input-wrapper">
+            <label for="montant2">Coût de l'opération - Montant 2 :</label>
+            <input type="text" id="montant2" name="montant2" required>
+        </div>
+
+        <div class="input-wrapper">
+            <label for="montant3">Coût de l'opération - Montant 3 (Montant 1 + Montant 2) :</label>
+            <input type="text" id="montant3" class="montant3" name="montant3" readonly>
+        </div>
+    </div>
+
+    <button type="submit">Envoyer la souscription</button>
+</form>
+<script src="https://cdn.jsdelivr.net/npm/quill@2.0.1/dist/quill.js" type="text/javascript"></script>
+<script src="/js/form.js" type="text/javascript"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/quill@2.0.1/dist/quill.snow.css" />
